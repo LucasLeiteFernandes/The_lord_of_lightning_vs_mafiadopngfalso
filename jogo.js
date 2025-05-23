@@ -254,7 +254,8 @@ let saida = { // função para começar a proxima fase
                 const fasesAleatorias = [fase2, fase3, fase4];
                 const comecarFaseAleatoria = fasesAleatorias[Math.floor(Math.random() * fasesAleatorias.length)];
                 comecarFaseAleatoria();
-                a = Math.floor(Math.random() * 1);
+                a = Math.floor(Math.random() * 2);
+                console.log(a)
                 if (fase >= 10) { cqt.dez = true }
             }
         }
@@ -323,7 +324,8 @@ function fase4() {
 }
 
 let paredesAleatorias = []
-let a = Math.floor(Math.random() * 1);
+let a = Math.floor(Math.random() * 2);
+console.log(a)
 function gerarParedes(fase) {
     paredesAleatorias = []
 
@@ -1409,6 +1411,9 @@ function animacao() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     desenharParticulas(ctx)
     atualizarParticulas()
+        if (fase >= 6){
+            ctx.drawImage(espaco,0,0,1000,1000)
+        }
 
     if (fase === 0 || fase === 5) {
         cutscene()
@@ -1428,9 +1433,26 @@ function animacao() {
         dropsVisiveis = [];
         if (vendedor.y === 253) {
             ctx.beginPath();
+            ctx.strokeStyle ='red'
             ctx.fillStyle = '#ffe4c4';
             ctx.fillRect(280, 320, 450, 200)
+            ctx.strokeRect(280, 320, 450, 200)
             ctx.closePath();
+
+            ctx.beginPath();
+            ctx.lineWidth = 5
+            ctx.fillStyle = 'black';
+            ctx.strokeStyle = 'white'
+            ctx.fillRect(600, 200, 230, 100)
+            ctx.strokeRect(600, 200, 230, 100)
+            ctx.closePath();
+
+            ctx.font = '20px Comic Sans MS'
+            ctx.fillStyle = 'white'
+            ctx.textAlign = "Center"
+            ctx.fillText("¿Que pasa forastero?", 610, 250)
+            ctx.closePath();
+
             cajado.desenha();
             bota.desenha();
             promocao.desenha()
@@ -1788,6 +1810,8 @@ function animacao() {
         ctx.fillStyle = '#FBF700'
         ctx.fillRect(0, 800, 1000, 4)
         ctx.closePath();
+        
+
         if (cqt.bolo === false) {
             ctx.beginPath();
             ctx.font = '20px Comic Sans MS'
@@ -1795,7 +1819,7 @@ function animacao() {
             ctx.textAlign = "left"
             ctx.fillText("???", 150, 875)
             ctx.closePath();
-            ctx.drawImage(sem, 525, 850, 100, 100)
+            ctx.drawImage(sem, 25, 850, 100, 100)
         }
         ctx.beginPath();
         ctx.font = '20px Comic Sans MS'
@@ -1866,6 +1890,9 @@ ratov.src = './jogoImages/noiseviado.jpg'
 
 let logo = new Image();
 logo.src = './jogoImages/logo.png'
+
+let espaco = new Image()
+espaco.src = './jogoImages/espaco2.png'
 
 // cqt.morra = true
 // cqt.bolo = true
