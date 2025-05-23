@@ -1435,8 +1435,8 @@ function animacao() {
             ctx.beginPath();
             ctx.strokeStyle ='red'
             ctx.fillStyle = '#ffe4c4';
-            ctx.fillRect(280, 320, 450, 200)
-            ctx.strokeRect(280, 320, 450, 200)
+            ctx.fillRect(270, 330, 450, 200)
+            ctx.strokeRect(270, 330, 450, 200)
             ctx.closePath();
 
             ctx.beginPath();
