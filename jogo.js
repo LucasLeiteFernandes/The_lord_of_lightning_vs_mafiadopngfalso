@@ -193,7 +193,7 @@ let promocao = { // faz a mesma coisa dos dois outros itens só que com um desco
     img: new Image(),
     desenha: function () {
         if (!this.ativo) return;
-        this.img.src = './jogoImages/caixa.jpg';
+        this.img.src = './jogoImages/podendo.webp';
         ctx.beginPath();
         ctx.drawImage(this.img, this.x - this.raio, this.y - this.raio, 2 * this.raio, 2 * this.raio);
         ctx.closePath();
@@ -234,8 +234,14 @@ let saida = { // função para começar a proxima fase
     desenha: function () {
         if (!this.ativo) return;
         ctx.beginPath();
-        ctx.fillStyle = 'blue';
+        ctx.fillStyle = 'black';
         ctx.fillRect(400, 950, 200, 50)
+        ctx.closePath();
+        ctx.beginPath();
+        ctx.font = '30px Comic Sans MS'
+        ctx.fillStyle = 'white'
+        ctx.textAlign = "left"
+        ctx.fillText("SAIDA", 450, 985)
         ctx.closePath();
         if (colideComPers(this)) {
             this.ativo = false
@@ -426,7 +432,7 @@ function criarItem(nome, x, y) { // cria os drops dos inimigos
             };
             break;
         case 'raio_bola':// um tiro especial grande e que atravessas os inimigos
-            base.img.src = './jogoImages/pilha.jpg'
+            base.img.src = './jogoImages/pilha2.png'
             base.desenha = function () {
                 if (!this.visivel) return;
                 ctx.drawImage(this.img, this.x - this.raio, this.y - this.raio, 2 * this.raio, 2 * this.raio);
@@ -450,7 +456,7 @@ function criarItem(nome, x, y) { // cria os drops dos inimigos
             };
             break;
         case 'arco_raio'://uma circunferencia em volta do personagem que mata os inimigos e dura 8 seg
-            base.img.src = './jogoImages/bateria.png'
+            base.img.src = './jogoImages/bateria2.png'
             base.desenha = function () {
                 if (!this.visivel) return;
                 ctx.drawImage(this.img, this.x - this.raio, this.y - this.raio, 2 * this.raio, 2 * this.raio);
@@ -839,9 +845,9 @@ let dindin = new Image();
 dindin.src = './jogoImages/moeda.png';
 
 let rb = new Image();
-rb.src = './jogoImages/pilha.jpg'
+rb.src = './jogoImages/pilha2.png'
 let ar = new Image();
-ar.src = './jogoImages/bateria.png'
+ar.src = './jogoImages/bateria2.png'
 
 let bolof = new Image();
 bolof.src = './jogoImages/bolof.jpg';
@@ -1091,6 +1097,7 @@ function cutscene() {
                 fase1();
                 ultimoTempo = performance.now()
                 musicaIntro.pause()
+                loop();
             }
             if (texto == 12) {
                 ctx.beginPath();
@@ -1229,9 +1236,9 @@ function passarFase() {
 
 
 let matoH = new Image()
-matoH.src = './jogoImages/matoH.png'
+matoH.src = './jogoImages/arbustoH.png'
 let matoV = new Image()
-matoV.src = './jogoImages/matoV.png'
+matoV.src = './jogoImages/arbustoV.png'
 function desenharParedes() {
     ctx.fillStyle = '#3fb8c8';
     for (let parede of paredes) {
