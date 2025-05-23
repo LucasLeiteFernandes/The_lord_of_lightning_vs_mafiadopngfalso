@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&display=swap');
+
+.um{
+    border: #FBF700 solid 0px;
+}
+
+.dois{
+    display: flex;
+    justify-content: center;
+}
+
+#canvas{
+    border: #FBF700 solid 10px;
+    background-image: url('./jogoImages/chao.png');
+    background-position: center;
+    transform: scale(1);
+    transform-origin: center;
+}
+
+#coluna{
+    background-color: #404eab;
+    border: #FBF700 solid 10px;
+    border-right: 0px;
+    padding: 5px;
+}
+
+#barra{
+    position: relative;
+    background-color: #aebef1;
+    border: #FBF700 solid 10px;
+    border-bottom: 0px;
+    margin-bottom: -5px ;
+    margin-left: -5;
+    background-color: green;
+}
+
+#especial{
+    background-color: #404eab;
+    border: #FBF700 solid 10px;
+    margin-bottom: -5px ;
+    margin-right: -5px;
+    border-bottom: 0px;
+    border-right: 0px;
+    padding: 5px;
+}
+
+body{
+    background-color: #404eab;
+    width: 95%;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    max-height: 500px;
+}
+
+a{
+    text-decoration: none;
+    color: #404eab;
+}
+
+.crt {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #404eab;
+    color: #0f0;
+    padding: 2rem;
+    box-sizing: border-box;
+    filter: contrast(1.2) brightness(1.1);
+    transform: perspective(1000px) rotateX(1deg);
+}
+
+.crt::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1150px;
+    pointer-events: none;
+    background: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.1) 0px,
+    rgba(0, 0, 0, 0.1) 2px,
+    transparent 1px,
+    transparent 3px
+    );
+    z-index: 2;
+}
+
+.crt::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background: radial-gradient(ellipse at center, rgba(255,255,255,0.05) 0%, transparent 80%);
+    z-index: 1;
+    mix-blend-mode: screen;
+}
+
+.navibar{
+    position: absolute;
+    flex-direction: column;
+    font-family: 'Comic Relief';
+    margin-top: 20px;
+    width: 10%;
+    top: 20;
+    left: 0;
+    gap: 20px;
+}
+
+.home, .play {
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: 'Comic Relief';
+    border: 2px solid transparent;
+    border-radius: 20px;
+    padding: 10px;
+    text-align: center;
+    background-color: #eaea10;
+    margin-top: 10px;
+}
+
+.home:hover, .play:hover {
+    background-color: #0d0d0d;
+    border: #eaea10 solid 2px;
+}

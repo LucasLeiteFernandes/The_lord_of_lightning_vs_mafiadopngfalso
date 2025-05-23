@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Filtro CRT</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background: rgb(255, 255, 255);
+      color: #0f0;
+      font-family: monospace;
+      overflow: hidden;
+    }
+
+    .crt {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      background: black;
+      color: #0f0;
+      padding: 2rem;
+      box-sizing: border-box;
+
+      /* Brilho e contraste */
+      filter: contrast(1.2) brightness(1.1);
+
+      /* Curvatura */
+      transform: perspective(1000px) rotateX(1deg);
+    }
+
+    /* Linhas horizontais (scanlines) */
+    .crt::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      background: repeating-linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.1) 0px,
+        rgba(0, 0, 0, 0.1) 1px,
+        transparent 1px,
+        transparent 3px
+      );
+      z-index: 2;
+    }
+
+    /* Efeito de brilho/flash */
+    .crt::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      background: radial-gradient(ellipse at center, rgba(255,255,255,0.05) 0%, transparent 80%);
+      z-index: 1;
+      mix-blend-mode: screen;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="crt">
+    <h1>Bem-vindo ao modo CRT</h1>
+    <p>Este é um exemplo de como aplicar um filtro CRT com puro CSS.</p>
+    <p>Aproveite a nostalgia!</p>
+  </div>
+</body>
+</html>
