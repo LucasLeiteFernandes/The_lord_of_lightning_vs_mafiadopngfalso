@@ -966,13 +966,13 @@ document.addEventListener('keydown', e => {
     }
 })
 
-document.addEventListener('keydown', e => { // zera o tempo
-    teclas[e.key] = true;
-    if ((e.key.toLowerCase() === 'p')) {
-        tempoRestante = 0
-        // enemigos.forEach(inimigo => inimigo.ativo = false);
-    }
-})
+// document.addEventListener('keydown', e => { // zera o tempo
+//     teclas[e.key] = true;
+//     if ((e.key.toLowerCase() === 'p')) {
+//         tempoRestante = 0
+//         // enemigos.forEach(inimigo => inimigo.ativo = false);
+//     }
+// })
 
 function cutscene() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
