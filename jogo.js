@@ -331,7 +331,6 @@ function fase4() {
 
 let paredesAleatorias = []
 let a = Math.floor(Math.random() * 2);
-console.log(a)
 function gerarParedes(fase) {
     paredesAleatorias = []
 
@@ -821,7 +820,7 @@ function atualizarParticulas() {
         p.x += p.vx;
         p.y += p.vy;
         p.vida--;
-        p.raio *= 0.96; // diminui o tamanho gradualmente
+        p.raio *= 0.96; 
         if (p.vida <= 0 || p.raio < 0.5) {
             particulas.splice(i, 1);
         }
@@ -1311,13 +1310,14 @@ function iniciar() {
             pers.x = 500;
             pers.y = 70;
             musicaIntro.play();
-
+            console.log("Artes feitas por: Felipe de Aquino Domingo")
+            console.log("Vagabundo profissional.")
+            console.log("twitter dele: @felipea95255255")
+            console.log("Nome do jogo e personagem inspirados pela musica 'The Lord of Lightning vs Balrog' da banda King Gizzard & The Lizard Wizar")
+            console.log("link da musica: https://youtu.be/Rd3vwwXArMQ?si=C9EAJHCCJd4aY-NQ")
         }
     })
 }
-
-let LWA = new Image()
-LWA.src = './jogoImages/lwA.png'
 
 function moverPers() {
     let v = pers.velocidade;
