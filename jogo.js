@@ -1951,4 +1951,3 @@ animacao();
 animacaoC();
 spawnarInimigo();
 spawnarInimigoB();
-
