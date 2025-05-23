@@ -1629,7 +1629,7 @@ function animacao() {
             ctx.font = '20px Comic Sans MS'
             ctx.fillStyle = '#FBF700'
             ctx.textAlign = "left"
-            ctx.fillText("Deseja fazer o cartão da loja?", 650, 75)
+            ctx.fillText("Gostaria fazer o cartão da loja?", 650, 75)
             ctx.closePath();
             ctx.drawImage(cupom1, 525, 50, 100, 100)
         }
@@ -1684,7 +1684,7 @@ function animacao() {
             ctx.font = '20px Comic Sans MS'
             ctx.fillStyle = '#FBF700'
             ctx.textAlign = "left"
-            ctx.fillText("Você realmente fez o cartão da loja?", 650, 275)
+            ctx.fillText("Hello stranger", 650, 275)
             ctx.closePath();
             ctx.drawImage(cupom2, 525, 250, 100, 100)
         }
@@ -1876,11 +1876,11 @@ mate.src = './jogoImages/based.webp'
 let desvio = new Image();
 desvio.src = './jogoImages/desvio.png'
 let lord = new Image();
-lord.src = './jogoImages/raio.png'
+lord.src = './jogoImages/litining.png'
 let cupom1 = new Image();
-cupom1.src = './jogoImages/barato.webp'
+cupom1.src = './jogoImages/cartaodaloja.jpg'
 let cupom2 = new Image();
-cupom2.src = './jogoImages/podendo.webp'
+cupom2.src = './jogoImages/stranger.jpg'
 let chad = new Image();
 chad.src = './jogoImages/chad.png'
 let DINHEIRO = new Image();
