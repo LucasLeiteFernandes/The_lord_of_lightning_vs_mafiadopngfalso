@@ -1944,3 +1944,4 @@ animacao();
 animacaoC();
 spawnarInimigo();
 spawnarInimigoB();
+
