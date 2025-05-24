@@ -10,6 +10,8 @@ const ctxb = canvas3.getContext("2d");
 const canva4 = document.getElementById('especial');
 let ctxs = canva4.getContext("2d");
 
+
+//define os sons
 const trovao = new Audio('./jogoSons/trovao.mp3')
 trovao.volume = 0.5
 const choque = new Audio('./jogoSons/choque.mp3')
@@ -21,6 +23,7 @@ iten.volume = 0.3
 const compra = new Audio('./jogoSons/compra.wav')
 compra.volume = 0.2
 
+//define as musicas
 const musicaIntro = new Audio('./jogoSons/intro.mp3')
 musicaIntro.loop = true;
 musicaIntro.volume = 0.4;
@@ -72,7 +75,7 @@ let jogo = { //estados do jogo
     infinito: false,
 }
 
-let cqt = {
+let cqt = {//conquistas
     tela: false,
     morra: false,
     wajaja: false,
@@ -89,7 +92,7 @@ let cqt = {
 let muquirana = true
 let tomi = true
 
-function platina() {
+function platina() { // funçao pra ganha a platina
     if (cqt.morra === true &&
         cqt.wajaja === true &&
         cqt.bolo === true &&
@@ -330,7 +333,7 @@ function fase4() {
 }
 
 let paredesAleatorias = []
-let a = Math.floor(Math.random() * 2);
+let a = Math.floor(Math.random() * 2);//escolhe aleatoriamente um dos padores de parede para o modo infinito
 function gerarParedes(fase) {
     paredesAleatorias = []
 
@@ -379,11 +382,11 @@ function fase5() {''
     pers.x = 500;
     pers.y = 75;
 }
-
+// fases aleatorias pro modo infinito
 const fasesAleatorias = [fase2, fase3, fase4]
 const comecarFaseAleatoria = fasesAleatorias[Math.floor(Math.random() * fasesAleatorias.length)]
 
-let pers = {
+let pers = {// personagem
     x: 500,
     y: 500,
     raio: 60,
@@ -487,7 +490,7 @@ function temRaioBola() { // verifica se o item raio bola esta no inv
     return inv.some(item => item.nome === 'raio_bola');
 }
 
-document.addEventListener('keydown', e => { //ativa um dos poderes
+document.addEventListener('keydown', e => { //ativa um dos poderes apertando espaco
     teclas[e.key] = true;
     if (e.key === ' ') {
         if (temRaioBola() && inv[0].nome === 'raio_bola') {
@@ -503,14 +506,14 @@ document.addEventListener('keydown', e => { //ativa um dos poderes
     }
 });
 
-function temArcoRaio() {
+function temArcoRaio() { // verifica um dos podderes
     return inv.some(item => item.nome === 'arco_raio');
 }
 
 let arcoImg = new Image();
 arcoImg.src = './jogoImages/ArcoRaio.png';
 
-let ArcoRaio = {
+let ArcoRaio = { // o poder fica em volta do personagem e mata os inimigos que encostam nele
     x: 500,
     y: 500,
     raio: 125,
@@ -543,7 +546,7 @@ let ArcoRaio = {
     }
 }
 
-function arcoRaio() { //função do arco raio
+function arcoRaio() { //função do arco raio para ativalo
     ArcoRaio.x = pers.x
     ArcoRaio.y = pers.y;
     ArcoRaio.ativo = true
