@@ -1099,7 +1099,6 @@ function cutscene() {
                 fase1();
                 ultimoTempo = performance.now()
                 musicaIntro.pause()
-                loop();
             }
             if (texto == 12) {
                 ctx.beginPath();
